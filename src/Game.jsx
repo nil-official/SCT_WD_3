@@ -12,6 +12,7 @@ const Game = () => {
 
     const handleClick = (index) => {
         if (board[index] || winner) return;
+
         const newBoard = [...board];
         newBoard[index] = xIsNext ? 'X' : 'O';
         setBoard(newBoard);
@@ -26,7 +27,7 @@ const Game = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br 
         from-[#0f172a] via-[#1e293b] to-[#0f172a]">
-            <h1 className="sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white drop-shadow-lg">Tic-Tac-Toe</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-8 text-white drop-shadow-lg">Tic-Tac-Toe</h1>
             <Board board={board} onClick={handleClick} />
             <StatusMessage winner={winner} xIsNext={xIsNext} isDraw={isDraw} />
             <ResetButton resetGame={resetGame} />
