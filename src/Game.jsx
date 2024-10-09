@@ -12,7 +12,6 @@ const Game = () => {
 
     const handleClick = (index) => {
         if (board[index] || winner) return;
-
         const newBoard = [...board];
         newBoard[index] = xIsNext ? 'X' : 'O';
         setBoard(newBoard);
